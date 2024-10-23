@@ -34,6 +34,17 @@ vim.keymap.set('n', '<leader>j', '<cmd>lprev<CR>zz')
 vim.keymap.set('n', '<leader>b', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
 
+-- Window movement mappings
+vim.keymap.set('n', '<M-h>', '<C-w>h', { desc = 'Move to left window' })
+vim.keymap.set('n', '<M-j>', '<C-w>j', { desc = 'Move to bottom window' })
+vim.keymap.set('n', '<M-k>', '<C-w>k', { desc = 'Move to top window' })
+vim.keymap.set('n', '<M-l>', '<C-w>l', { desc = 'Move to right window' })
+-- Window resizing with Alt + Arrow keys
+vim.keymap.set('n', '<M-Up>', ':resize +2<CR>', { desc = 'Increase window height' })
+vim.keymap.set('n', '<M-Down>', ':resize -2<CR>', { desc = 'Decrease window height' })
+vim.keymap.set('n', '<M-Left>', ':vertical resize -2<CR>', { desc = 'Decrease window width' })
+vim.keymap.set('n', '<M-Right>', ':vertical resize +2<CR>', { desc = 'Increase window width' })
+
 vim.keymap.set('n', '<leader><leader>', function()
   vim.cmd 'so'
 end)
